@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container" id="leaderboard-container">
+        <header>
+            <h1>Search</h1>
+        </header>
+
+        <form name="search" method="GET" action="/api/definitions/" onsubmit="return validateForm()">
+            <input type="text" placeholder="Word" name="word">
+            <button id="submit-button">Submit</button>
+        </form>
+
+        <% if(entry == undefined){ %>
+        <p style="color: red;">Word not found</p>
+        <% } else{ %>
+        <p>Word: <%= entry.word %></p>
+        <p>Definition: <%= entry.definition %></p>
+        <% } %>
+
+
+
+    </div>
+
+</body>
+
+</html>

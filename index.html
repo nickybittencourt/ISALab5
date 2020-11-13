@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container" id="summary-container">
+        <header>
+            <h1>Enter a word and its definition</h1>
+        </header>
+
+        <section class="searchPanel">
+            <form name="go-to-search" method="GET" action="/api/search">
+                <button id="search-button">Go to search</button>
+            </form>
+        </section>
+
+        <form name="submit" method="POST" action="/api/definitions" onsubmit="return validateForm()">
+            <input type="text" placeholder="Word" name="word">
+            <textarea name="definition">Enter definition here...</textarea>
+            <button id="submit-button">Submit</button>
+        </form>
+
+    </div>
+    <script src="validate.js"></script>
+</body>
+
+</html>
